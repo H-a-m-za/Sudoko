@@ -38,9 +38,13 @@ We used gamma to be = 15
 1.5.1) We tried global thresholding which has proven to be a failure in images    with bright and dark areas
 
 1.5.2) We chose Adaptive Thresholding with the following parameters:
+
        Method: Gaussian C
+       
        blockSize: 111
+       
        C: 5
+       
 
 1.6) Then, we applied dilation with a kernel 3x3 to thicken the lines which helps in detecting curved lines
 
@@ -48,12 +52,18 @@ We used gamma to be = 15
 ### **2) Edge Detection**
 
 2.1) We applied Hough Transform with following parameters:
+
      minLineLength : minimum_image_dimension / 4
+     
      rho: 1
+
      theta: pi/180
+     
      threshold: 200
+     
      maxLineGap: 45
-     But after we applied Hough to get the lines we found that some lines get neglected, also lines are too thick which can result in some background features to get recognized as sudoku frame
+     
+  But after we applied Hough to get the lines we found that some lines get neglected, also lines are too thick which can result in some background features to get recognized as sudoku frame
 
 2.2) So, we applied canny, to thin the lines and reduce the effect of the  background on the detection, also to reduce the number of intersection points in the next stage 
 
@@ -62,11 +72,17 @@ We used gamma to be = 15
       Erosion with kernel size 3x3 once
 
 2.4) Now apply Hough again to get the lines with following parameters:
+
      minLineLength : minimum_image_dimension / 3
+     
      rho: 1
+     
      theta: pi/180
+     
      threshold: 200
+     
      maxLineGap: 50
+     
 
 ### **3) Getting Intersection points**
 
