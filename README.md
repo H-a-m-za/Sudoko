@@ -19,7 +19,7 @@ There were 5 steps in order to tackle this problem:
 
 1.2) If image is too dark (The maximum pixel intensity in the image is < 100), then apply gamma correction using the following formula:
                                 
-                                I(corrected) = (I/255)^(1/gamma) * 255
+                                \[I(new) = \left( \frac{I}{255} \right)^{\gamma} \times 255\]
   
 We used gamma to be = 15
 
