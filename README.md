@@ -17,7 +17,7 @@ There were 5 steps in order to tackle this problem:
 
 1.1) Convert Image to gray Scale
 
-1.2) If image is too dark (The maximum pixel intensity in the image is < 100), then apply gamma correction using the following formula:
+1.2) If image is too dark (The maximum pixel intensity in the image is < 100), we equailize the histogram, then apply gamma correction using the following formula:
                                 
                                 I(new) = (I/255)^(1/gamma) * 255
   
