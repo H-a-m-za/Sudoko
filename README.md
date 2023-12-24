@@ -35,7 +35,7 @@ We used gamma to be = 15
 
 1.5) Now comes the thresholding step:
 
-1.5.1) We tried global thresholding which has proven to be a failure in images with bright and dark areas
+1.5.1) We tried global thresholding which has proven to be a failure in images    with bright and dark areas
 
 1.5.2) We chose Adaptive Thresholding with the following parameters:
 
@@ -68,10 +68,8 @@ We used gamma to be = 15
 2.2) So, we applied canny, to thin the lines and reduce the effect of the  background on the detection, also to reduce the number of intersection points in the next stage 
 
 2.3) When we applied hough again, we found that it didn't detect the lines because they were too thin so we did the following:
-
-  Dilation with kernel size 5x5 twice
-  
-  Erosion with kernel size 3x3 once
+      Dilation with kernel size 5x5 twice
+      Erosion with kernel size 3x3 once
 
 2.4) Now apply Hough again to get the lines with following parameters:
 
