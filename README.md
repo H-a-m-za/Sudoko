@@ -13,7 +13,7 @@ Process of solution:
 
 There were 5 steps in order to tackle this problem:
 
-**1) Preprocessing :**
+### **1) Preprocessing :**
 
 1.1) Convert Image to gray Scale
 
@@ -23,7 +23,9 @@ There were 5 steps in order to tackle this problem:
   
 We used gamma to be = 15
 
-1.3) Apply Median Filter with kernel sie 5x5 7 times. We chose this as our noise removal technique. We also tried gaussian filter and minimum filter but they were not effective
+1.3) Apply Median Filter with kernel sie 5x5 7 times. 
+     We chose this as our noise removal technique. 
+     We also tried gaussian filter and minimum filter but they were not effective
 
 1.4) After this we detect if image is dark mode or not
      i.e.: The most repeated intensity in the image now is < 127 
@@ -43,7 +45,7 @@ We used gamma to be = 15
 1.6) Then, we applied dilation with a kernel 3x3 to thicken the lines which helps in detecting curved lines
 
 
-2) Edge Detection
+### **2) Edge Detection**
 
 2.1) We applied Hough Transform with following parameters:
      minLineLength : minimum_image_dimension / 4
@@ -66,15 +68,15 @@ We used gamma to be = 15
      threshold: 200
      maxLineGap: 50
 
-3) Getting Intersection points
+### **3) Getting Intersection points**
 
 3.1) Here We loop over the lines and get the angle between each two lines, we only accept intersections that are between 80 to 100 degrees. Also, to further remove the effect of the background we only accept intersections on a line if that line has been intersected eight times or more (what characterizes the sudoku lines is that they are intersected a lot)
 
-4) Getting Outermost intersection Points
+### **4) Getting Outermost intersection Points**
 
 4.1) Now after the reducing the background effect, we can now say that the outermost intersection points are the sudoku frame points
 
-5) Warp the image
+### **5) Warp the image**
 
 5.1) We warp the image using the outermost intersection points and divide the image to tiles
 
