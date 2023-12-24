@@ -1,13 +1,19 @@
+# Smart Sudoku Solver
 This Project aims to solve a sudoku grid by detecting it using classical computer vision algorithms, then Detecting the numbers in each cell using OCR, then finally solving the sudoku
+---
+## Phase 1
 
-#Phase 1
 Description: Phase 1 aims to get the image of the board and then extract each individual suduko tile
+
 Inputs: Sudoku Image
+
 Outputs: 81 tiles of sudoku
+
 Process of solution:
+
 There were 5 steps in order to tackle this problem:
 
-1) Preprocessing :
+**1) Preprocessing :**
 
 1.1) Convert Image to gray Scale
 
@@ -45,7 +51,6 @@ We used gamma to be = 15
      theta: pi/180
      threshold: 200
      maxLineGap: 45
-
      But after we applied Hough to get the lines we found that some lines get neglected, also lines are too thick which can result in some background features to get recognized as sudoku frame
 
 2.2) So, we applied canny, to thin the lines and reduce the effect of the  background on the detection, also to reduce the number of intersection points in the next stage 
