@@ -19,7 +19,7 @@ There were 5 steps in order to tackle this problem:
 
 1.2) If image is too dark (The maximum pixel intensity in the image is < 100), then apply gamma correction using the following formula:
                                 
-                                \[I(new) = \left( \frac{I}{255} \right)^{\gamma} \times 255\]
+                                I(new) = (I/255)^(1/gamma) * 255
   
 We used gamma to be = 15
 
@@ -68,8 +68,10 @@ We used gamma to be = 15
 2.2) So, we applied canny, to thin the lines and reduce the effect of the  background on the detection, also to reduce the number of intersection points in the next stage 
 
 2.3) When we applied hough again, we found that it didn't detect the lines because they were too thin so we did the following:
-      Dilation with kernel size 5x5 twice
-      Erosion with kernel size 3x3 once
+
+  Dilation with kernel size 5x5 twice
+  
+  Erosion with kernel size 3x3 once
 
 2.4) Now apply Hough again to get the lines with following parameters:
 
